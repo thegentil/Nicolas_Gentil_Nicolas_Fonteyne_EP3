@@ -8,5 +8,12 @@ Projeto 3
 
 """
 
-oi
+alimentos = open('alimentos.csv')
+usuario = open('usuario.csv',encoding="utf-8")
+
+x =alimentos.readlines()
+y=usuario.readlines()
+
+print(x)
+print(y)
 
