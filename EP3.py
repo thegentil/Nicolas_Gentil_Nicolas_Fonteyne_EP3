@@ -16,9 +16,9 @@ u = usuario.readlines()          #Lendo a lista do usuário
 
 #Organizando a lista do usuário
 
-partes = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas
+info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas
 
-for p in partes:
+for p in info:
     print(p)
         
 print('')
@@ -26,5 +26,24 @@ print('')
 for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
     for pedaço in l.strip().split(","):
         print(pedaço)
+     
+#Criando os dicionários
+
+dic_al = {}     
+dic_cal = {}
+dic_prot = {}
+dic_carb = {}
+dic_gord = {}
+
+#Organizando a lista de alimentos
+
+for e in a[1:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
+    pedacos = e.strip().split(",")
+    dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2])]
+
+print(dic_al)        
+
+
+         
 
 
