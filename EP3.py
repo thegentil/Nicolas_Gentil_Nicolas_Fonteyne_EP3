@@ -30,18 +30,16 @@ for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuá
 #Criando os dicionários
 
 dic_al = {}     
-dic_cal = {}
-dic_prot = {}
-dic_carb = {}
-dic_gord = {}
 
 #Organizando a lista de alimentos
 
 for e in a[1:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
     pedacos = e.strip().split(",")
-    dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2])]
+    dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2]), float(pedacos[3]), float(pedacos[4]), float(pedacos[5])]
 
-print(dic_al)        
+print(dic_al.items())        
+
+oi
 
 
          
