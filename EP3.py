@@ -8,6 +8,8 @@ Projeto 3
 
 """
 
+from formulas_utilizadas import *
+
 alimentos = open('alimentos.csv', encoding="latin1")          #Abrindo a lista de alimentos
 usuario = open('usuario.csv',encoding="latin1")          #Abrindo a lista do usuário
 
@@ -37,12 +39,8 @@ for e in a[1:]:
     pedacos = e.strip().split(",")
     dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2]), float(pedacos[3]), float(pedacos[4]), float(pedacos[5])]
 
-<<<<<<< HEAD
-print(dic_al.items())      
-=======
-print(dic_al.items())   
 
->>>>>>> origin/master
+print(dic_al.items())   
 
 
 
