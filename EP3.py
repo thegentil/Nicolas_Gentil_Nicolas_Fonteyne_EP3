@@ -39,7 +39,6 @@ for e in a[1:]:
 
 print(dic_al.items())   
 
-oi     
 
 
 
