@@ -37,9 +37,7 @@ for e in a[1:]:
     pedacos = e.strip().split(",")
     dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2]), float(pedacos[3]), float(pedacos[4]), float(pedacos[5])]
 
-print(dic_al.items())   
-
-oi     
+print(dic_al.items())      
 
 
 
