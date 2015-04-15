@@ -12,7 +12,6 @@ def regra_de_tres (gramas_ingeridas, calorias_por_100grama_na_tabela):
     return (gramas_ingeridas/100)*calorias_por_100grama_na_tabela
     
     
-    
 
 def formula_de_hb_f(peso, altura, idade, grau_de_atividade):
     
