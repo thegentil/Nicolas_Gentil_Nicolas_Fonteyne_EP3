@@ -16,6 +16,11 @@ usuario = open('usuario.csv',encoding="latin1")          #Abrindo a lista do usu
 a = alimentos.readlines()          #Lendo a lista de alimentos
 u = usuario.readlines()          #Lendo a lista do usuário
 
+#Criando os dicionários
+
+dic_al = {} 
+dic_consumo = {}    
+
 #Organizando a lista do usuário
 
 info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas
@@ -27,13 +32,11 @@ print('')
 
 
 for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
-    b = l.strip().split(",")    
-    for pedaço in b:
+    linha = l.strip().split(",")    
+    for pedaço in linha:
         print(pedaço)
-     
-#Criando o dicionário
-
-dic_al = {}     
+       
+            
 
 #Organizando a lista de alimentos
 
@@ -48,10 +51,13 @@ info [1] = float(info[1])
 info [2] = float(info[2])         #fazendo com que os elementos numéricos da lista info passem para o formato float
 info[4] = float(info[4])
 
+# calorias cosumidas:
+
+
+
 # calorias que deveria consumir:
 
 print('')
-
 
 if info[3] == 'M':
     
@@ -61,10 +67,10 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
     
-print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
+print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
  
 
-    
+#print(dic_al)    
 
 
          
