@@ -25,12 +25,14 @@ for p in info:
         
 print('')
 
+lista = []
 
 for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
-    b = l.strip().split(",")    
+    b = l.strip().split(",")  
+    lista.append(b)
     for pedaço in b:
         print(pedaço)
-     
+print(lista)
 #Criando o dicionário
 
 dic_al = {}     
@@ -62,7 +64,10 @@ print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
 
     
 
-
+for e in sorted(lista):
+    data = print(e[0])
+    alimento = print(e[1])
+    gramas = print(e[2])
 
 
          
