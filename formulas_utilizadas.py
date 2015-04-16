@@ -8,8 +8,11 @@ formulas utilizadas
 
 """
 
-def regra_de_tres (gramas_ingeridas, calorias_por_100grama_na_tabela):
-    return (gramas_ingeridas/100)*calorias_por_100grama_na_tabela
+def regra_de_tres (gramas_ingeridas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g  ):
+    return (gramas_ingeridas/100)*kcal_por_100g
+    return (gramas_ingeridas/100)*prot_por_100g
+    return (gramas_ingeridas/100)*carb_por_100g
+    return (gramas_ingeridas/100)*gord_por_100g
     
     
 
@@ -58,4 +61,4 @@ def formula_de_hb_m(peso, altura, idade, grau_de_atividade):
     if grau_de_atividade == 'muito alto':
         
         return (88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade)) * 1.9  
-        
+ 
