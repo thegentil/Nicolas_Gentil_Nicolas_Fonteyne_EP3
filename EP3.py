@@ -16,26 +16,42 @@ usuario = open('usuario.csv',encoding="latin1")          #Abrindo a lista do usu
 a = alimentos.readlines()          #Lendo a lista de alimentos
 u = usuario.readlines()          #Lendo a lista do usuário
 
+#Criando o dicionário
+
+dic_al = {}  
+
 #Organizando a lista do usuário
 
-info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas
+info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
 
 for p in info:        
     print(p)
         
 print('')
 
+#Criando uma timeline de alimentos ingeridos pelo usuário
+
 lista = []
 
-for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuário
+for l in u[3:]:
+
     b = l.strip().split(",")  
     lista.append(b)
+<<<<<<< HEAD
     for pedaço in b:
         print(pedaço)
 
 #Criando o dicionário
+=======
+>>>>>>> origin/master
 
-dic_al = {}     
+for e in sorted(lista):
+    data = e[0]
+    alimento = e[1]
+    gramas = float(e[2])  
+    #print(dic_al[alimento])
+#    print(dic_al['ABOBRINHA REFOGADA'])
+    #print(alimento)
 
 #Organizando a lista de alimentos
 
@@ -44,10 +60,22 @@ for e in a[1:]:
     dic_al[pedacos[0]] = [float(pedacos[1]), float(pedacos[2]), float(pedacos[3]), float(pedacos[4]), float(pedacos[5])]
     #pedaço 1 = gramas / 2 = kcalorias / 3 = proteínas / 4 = carboidratos / 5 = gorduras
 
-info [1] = float(info[1])
-info [2] = float(info[2])         #fazendo com que os elementos numéricos da lista info passem para o formato float
-info[4] = float(info[4])
+#Fazendo com que os elementos numéricos da lista info passem para o formato float
 
+info [1] = float(info[1])
+info [2] = float(info[2])         
+info [4] = float(info[4])
+
+#Comparando os valores do usuário com os alimentos
+
+if alimento in dic_al:
+    print(dic_al[alimento][1])
+    #regra_de_tres (gramas, dic_al[alimento[1]], prot_por_100g, carb_por_100g, gord_por_100g  )
+
+
+#print(dic_al)
+
+<<<<<<< HEAD
 # calorias, proteínas, carbs e gord consumidas:
 for e in sorted(lista):
     data = e[0]
@@ -61,6 +89,19 @@ for e in sorted(lista):
 regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
 
 # calorias que deveria consumir:
+=======
+
+
+
+
+print(dic_al['ABOBRINHA REFOGADA'])
+
+
+
+
+
+#Calorias que deveria consumir:
+>>>>>>> origin/master
 
 print('')
 
@@ -72,10 +113,33 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
 
+<<<<<<< HEAD
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
+=======
+print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
+<<<<<<< HEAD
+
+
+
+=======
+
+>>>>>>> origin/master
 
     
     
 
 
+<<<<<<< HEAD
         
+=======
+for e in sorted(lista):
+    data = print(e[0])
+    alimento = print(e[1])
+    gramas = print(e[2])
+>>>>>>> origin/master
+
+
+         
+
+
+>>>>>>> origin/master
