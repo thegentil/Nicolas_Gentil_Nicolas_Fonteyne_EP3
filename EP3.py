@@ -33,24 +33,14 @@ print('')
 
 lista = []
 
+
 for l in u[3:]:
 
-    b = l.strip().split(",")  
+    b = l.strip().split(",") 
     lista.append(b)
 
     for pedaço in b:
         print(pedaço)
-
-#Criando o dicionário
-
-
-for e in sorted(lista):
-    data = e[0]
-    alimento = e[1]
-    gramas = float(e[2])  
-    #print(dic_al[alimento])
-#    print(dic_al['ABOBRINHA REFOGADA'])
-    #print(alimento)
 
 #Organizando a lista de alimentos
 
@@ -66,14 +56,30 @@ info [2] = float(info[2])
 info [4] = float(info[4])
 
 # calorias, proteínas, carbs e gord consumidas:
+
+print(sorted(lista))
+
 for e in sorted(lista):
     data = e[0]
     alimento = e[1]
     gramas = float(e[2])
-    kcal_por_100g = dic_al[alimento][1]
-    prot_por_100g = dic_al[alimento][2]
-    carb_por_100g = dic_al[alimento][3]
-    gord_por_100g = dic_al[alimento][4]
+    if e != lista[0]:
+        if e[0] != e-1[0]:
+            kcal_por_100g = dic_al[alimento][1]
+            prot_por_100g = dic_al[alimento][2]
+            carb_por_100g = dic_al[alimento][3]
+            gord_por_100g = dic_al[alimento][4]
+        else:
+            print('')
+            kcal_por_100g = dic_al[alimento][1]
+            prot_por_100g = dic_al[alimento][2]
+            carb_por_100g = dic_al[alimento][3]
+            gord_por_100g = dic_al[alimento][4]
+    else:
+        kcal_por_100g = dic_al[alimento][1]
+        prot_por_100g = dic_al[alimento][2]
+        carb_por_100g = dic_al[alimento][3]
+        gord_por_100g = dic_al[alimento][4]
 
     x = regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
     print(x)

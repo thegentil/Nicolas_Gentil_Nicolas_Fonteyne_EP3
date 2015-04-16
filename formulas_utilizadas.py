@@ -10,10 +10,10 @@ formulas utilizadas
 
 def regra_de_tres (gramas_ingeridas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g):
     listaA= [0]*4
-    listaA[0] =(gramas_ingeridas/100)*kcal_por_100g
-    listaA[1] =(gramas_ingeridas/100)*prot_por_100g
-    listaA[2] =(gramas_ingeridas/100)*carb_por_100g
-    listaA[3]= (gramas_ingeridas/100)*gord_por_100g
+    listaA[0] = round((gramas_ingeridas/100)*kcal_por_100g, 3)
+    listaA[1] = round((gramas_ingeridas/100)*prot_por_100g, 3)
+    listaA[2] = round((gramas_ingeridas/100)*carb_por_100g, 3)
+    listaA[3] = round((gramas_ingeridas/100)*gord_por_100g, 3)
     return listaA
     
 
