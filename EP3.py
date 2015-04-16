@@ -8,10 +8,15 @@ Projeto 3
 
 """
 
+<<<<<<< Updated upstream
 from formulas_utilizadas import *
 
 alimentos = open('alimentos.csv', encoding="latin1")          #Abrindo a lista de alimentos
 usuario = open('usuario.csv',encoding="latin1")          #Abrindo a lista do usuário
+=======
+alimentos = open('alimentos.csv', encoding = "latin1")          #Abrindo a lista de alimentos
+usuario = open('usuario.csv',encoding = "latin1")          #Abrindo a lista do usuário
+>>>>>>> Stashed changes
 
 a = alimentos.readlines()          #Lendo a lista de alimentos
 u = usuario.readlines()          #Lendo a lista do usuário
@@ -52,6 +57,7 @@ info[4] = float(info[4])
 
 print('')
 
+<<<<<<< Updated upstream
 
 if info[3] == 'M':
     
@@ -63,6 +69,11 @@ if info[3] == 'F':
     
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
  
+=======
+
+print(dic_al.items())      
+
+>>>>>>> Stashed changes
 
     
 
