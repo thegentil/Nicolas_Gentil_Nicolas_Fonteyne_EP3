@@ -42,22 +42,12 @@ for l in u[3:]:
     
     for pedaço in b:
         print(pedaço)
-<<<<<<< HEAD
 
-for e in sorted(lista):
-    data = e[0]
-    alimento = e[1]
-    gramas = float(e[2])  
+print(' ')
 
 #Organizando a lista de alimentos
-=======
-       
-print(lista)
-for e in lista:
-    dic_gramas[e[1]] = e[2]
-print(dic_gramas)
-#adicionando os elementos no dic_al:
->>>>>>> origin/master
+
+#Adicionando os elementos no dic_al:
 
 for e in a[1:]:
     pedacos = e.strip().split(",")
@@ -66,6 +56,18 @@ for e in a[1:]:
 
 #adicionando os elementos ao dic_gramas:
 
+for e in lista:
+    dic_gramas[e[1]] = e[2]
+print(dic_gramas)
+
+#Adicionando os elementos ao dic_dias:
+listavalues = []
+for e in lista:
+    dic_dias[e[0]] = listavalues
+    listavalues.append(e[1])
+        
+print('')  
+print(dic_dias)
 
 #Fazendo com que os elementos numéricos da lista info passem para o formato float
 
@@ -73,38 +75,6 @@ info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
 
-<<<<<<< HEAD
-# calorias, proteínas, carbs e gord consumidas:
-
-print(sorted(lista))
-
-for e in sorted(lista):
-    data = e[0]
-    alimento = e[1]
-    gramas = float(e[2])
-    if e != lista[0]:
-        if e[0] != e-1[0]:
-            kcal_por_100g = dic_al[alimento][1]
-            prot_por_100g = dic_al[alimento][2]
-            carb_por_100g = dic_al[alimento][3]
-            gord_por_100g = dic_al[alimento][4]
-        else:
-            print('')
-            kcal_por_100g = dic_al[alimento][1]
-            prot_por_100g = dic_al[alimento][2]
-            carb_por_100g = dic_al[alimento][3]
-            gord_por_100g = dic_al[alimento][4]
-    else:
-        kcal_por_100g = dic_al[alimento][1]
-        prot_por_100g = dic_al[alimento][2]
-        carb_por_100g = dic_al[alimento][3]
-        gord_por_100g = dic_al[alimento][4]
-
-    x = regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
-    print(x)
-
-=======
->>>>>>> origin/master
 # calorias que deveria consumir:
 
 print('')
