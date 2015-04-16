@@ -41,16 +41,10 @@ for l in u[3:]:
     for pedaço in b:
         print(pedaço)
 
-#Criando o dicionário
-
-
 for e in sorted(lista):
     data = e[0]
     alimento = e[1]
     gramas = float(e[2])  
-    #print(dic_al[alimento])
-#    print(dic_al['ABOBRINHA REFOGADA'])
-    #print(alimento)
 
 #Organizando a lista de alimentos
 
@@ -66,6 +60,7 @@ info [2] = float(info[2])
 info [4] = float(info[4])
 
 # calorias, proteínas, carbs e gord consumidas:
+
 for e in sorted(lista):
     data = e[0]
     alimento = e[1]
