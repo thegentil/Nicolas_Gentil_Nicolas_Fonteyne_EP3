@@ -42,14 +42,11 @@ for l in u[3:]:
     for pedaço in b:
         print(pedaço)
 
-<<<<<<< HEAD
-=======
 for e in sorted(lista):
     data = e[0]
     alimento = e[1]
     gramas = float(e[2])  
 
->>>>>>> origin/master
 #Organizando a lista de alimentos
 
 for e in a[1:]:
@@ -65,11 +62,8 @@ info [4] = float(info[4])
 
 # calorias, proteínas, carbs e gord consumidas:
 
-<<<<<<< HEAD
 print(sorted(lista))
 
-=======
->>>>>>> origin/master
 for e in sorted(lista):
     data = e[0]
     alimento = e[1]
