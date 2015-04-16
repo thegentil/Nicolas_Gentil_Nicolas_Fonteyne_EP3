@@ -32,7 +32,7 @@ for l in u[3:]:          #Criando uma timeline de alimentos ingeridos pelo usuá
     lista.append(b)
     for pedaço in b:
         print(pedaço)
-print(lista)
+
 #Criando o dicionário
 
 dic_al = {}     
@@ -48,6 +48,18 @@ info [1] = float(info[1])
 info [2] = float(info[2])         #fazendo com que os elementos numéricos da lista info passem para o formato float
 info[4] = float(info[4])
 
+# calorias, proteínas, carbs e gord consumidas:
+for e in sorted(lista):
+    data = e[0]
+    alimento = e[1]
+    gramas = float(e[2])
+    kcal_por_100g = dic_al[alimento][1]
+    prot_por_100g = dic_al[alimento][2]
+    carb_por_100g = dic_al[alimento][3]
+    gord_por_100g = dic_al[alimento][4]
+
+regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
+
 # calorias que deveria consumir:
 
 print('')
@@ -60,18 +72,10 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
 
-print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
+print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
 
-
+    
     
 
 
-for e in sorted(lista):
-    data = print(e[0])
-    alimento = print(e[1])
-    gramas = print(e[2])
-
-
-         
-
-
+        
