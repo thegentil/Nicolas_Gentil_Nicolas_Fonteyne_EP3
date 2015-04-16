@@ -57,8 +57,17 @@ if info[3] == 'M':
 if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
+<<<<<<< HEAD
 
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
+=======
+    
+print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
+
+    
+
+
+>>>>>>> origin/master
 
 
          
