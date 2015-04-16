@@ -12,13 +12,6 @@ from formulas_utilizadas import *
 
 alimentos = open('alimentos.csv', encoding="latin1")          #Abrindo a lista de alimentos
 usuario = open('usuario.csv',encoding="latin1")          #Abrindo a lista do usuário
-<<<<<<< Updated upstream
-=======
-
-alimentos = open('alimentos.csv', encoding = "latin1")          #Abrindo a lista de alimentos
-usuario = open('usuario.csv',encoding = "latin1")          #Abrindo a lista do usuário
-
->>>>>>> Stashed changes
 
 a = alimentos.readlines()          #Lendo a lista de alimentos
 u = usuario.readlines()          #Lendo a lista do usuário
@@ -64,21 +57,8 @@ if info[3] == 'M':
 if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
-    
-<<<<<<< Updated upstream
+
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
-
-    
-=======
-print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
-
-print('')
-
-print(dic_al.items())      
-
-
-#print(dic_al)    
->>>>>>> Stashed changes
 
 
          
