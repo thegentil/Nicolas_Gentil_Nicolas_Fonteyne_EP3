@@ -8,12 +8,13 @@ formulas utilizadas
 
 """
 
-def regra_de_tres (gramas_ingeridas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g  ):
-    return (gramas_ingeridas/100)*kcal_por_100g
-    return (gramas_ingeridas/100)*prot_por_100g
-    return (gramas_ingeridas/100)*carb_por_100g
-    return (gramas_ingeridas/100)*gord_por_100g
-    
+def regra_de_tres (gramas_ingeridas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g):
+    listaA= [0]*4
+    listaA[0] =(gramas_ingeridas/100)*kcal_por_100g
+    listaA[1] =(gramas_ingeridas/100)*prot_por_100g
+    listaA[2] =(gramas_ingeridas/100)*carb_por_100g
+    listaA[3]= (gramas_ingeridas/100)*gord_por_100g
+    return listaA
     
 
 def formula_de_hb_f(peso, altura, idade, grau_de_atividade):

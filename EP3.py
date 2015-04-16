@@ -37,13 +37,12 @@ for l in u[3:]:
 
     b = l.strip().split(",")  
     lista.append(b)
-<<<<<<< HEAD
+
     for pedaço in b:
         print(pedaço)
 
 #Criando o dicionário
-=======
->>>>>>> origin/master
+
 
 for e in sorted(lista):
     data = e[0]
@@ -66,16 +65,6 @@ info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
 
-#Comparando os valores do usuário com os alimentos
-
-if alimento in dic_al:
-    print(dic_al[alimento][1])
-    #regra_de_tres (gramas, dic_al[alimento[1]], prot_por_100g, carb_por_100g, gord_por_100g  )
-
-
-#print(dic_al)
-
-<<<<<<< HEAD
 # calorias, proteínas, carbs e gord consumidas:
 for e in sorted(lista):
     data = e[0]
@@ -86,22 +75,10 @@ for e in sorted(lista):
     carb_por_100g = dic_al[alimento][3]
     gord_por_100g = dic_al[alimento][4]
 
-regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
+    x = regra_de_tres (gramas, kcal_por_100g, prot_por_100g, carb_por_100g, gord_por_100g)
+    print(x)
 
 # calorias que deveria consumir:
-=======
-
-
-
-
-print(dic_al['ABOBRINHA REFOGADA'])
-
-
-
-
-
-#Calorias que deveria consumir:
->>>>>>> origin/master
 
 print('')
 
@@ -113,33 +90,6 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
 
-<<<<<<< HEAD
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
-=======
-print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', result)
-<<<<<<< HEAD
-
-
-
-=======
-
->>>>>>> origin/master
-
-    
     
 
-
-<<<<<<< HEAD
-        
-=======
-for e in sorted(lista):
-    data = print(e[0])
-    alimento = print(e[1])
-    gramas = print(e[2])
->>>>>>> origin/master
-
-
-         
-
-
->>>>>>> origin/master
