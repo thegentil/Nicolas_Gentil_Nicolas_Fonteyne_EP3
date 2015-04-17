@@ -43,11 +43,10 @@ for l in u[3:]:
     for pedaço in b:
         print(pedaço)
 
-print(' ')
+lista = sorted(lista)
 
-#Organizando a lista de alimentos
-
-#Adicionando os elementos no dic_al:
+print('')
+#adicionando os elementos no dic_al:
 
 for e in a[1:]:
     pedacos = e.strip().split(",")
@@ -60,20 +59,36 @@ for e in lista:
     dic_gramas[e[1]] = e[2]
 print(dic_gramas)
 
+
 #Adicionando os elementos ao dic_dias:
 listavalues = []
-for e in lista:
-    dic_dias[e[0]] = listavalues
-    listavalues.append(e[1])
+
+for i in range(len(lista)):
+    
+    dic_dias[lista[i][0]] = listavalues
+    
+    if lista[i][0] != lista[0][0]: 
+        
+        if lista[i][0] == lista[i-1][0]:
+            listavalues.append(lista[i][1])
+        else:
+            listavalues = [lista[i][1]]
+    else:
+        listavalues.append(lista[i][1])
         
 print('')  
 print(dic_dias)
+
 
 #Fazendo com que os elementos numéricos da lista info passem para o formato float
 
 info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
+
+# calorias, proteínas, carbs e gord consumidas:
+
+
 
 # calorias que deveria consumir:
 
