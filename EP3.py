@@ -83,6 +83,8 @@ Criando o programa que irá relacionar os valores aos dias
 
 for e in lista:
     dic_gramas[e[1]] = e[2]
+for e in dic_gramas:
+    dic_gramas[e] = float(dic_gramas[e])
 print(dic_gramas)
 
 
@@ -105,9 +107,15 @@ for i in range(len(lista)):
 print('')  
 print(dic_dias)
 
-
-
-
+#calorias que o lok consumiu:
+for e in dic_gramas:
+    dic_al[e][0] = dic_gramas[e]
+    
+for e in dic_al:
+    
+    if e in dic_gramas:
+    
+        regra_de_tres (dic_al[e][0], dic_al[e][1], dic_al[e][2], dic_al[e][3], dic_al[e][4])
 
 '''
 Determinando o número de calorias que o usuário deveria ingerir a cada dia
