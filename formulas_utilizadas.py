@@ -26,7 +26,7 @@ def regra_de_tres (gramas_ingeridas, kcal_por_100g, prot_por_100g, carb_por_100g
     listaA[2] = round((gramas_ingeridas/100)*carb_por_100g, 3)
     listaA[3] = round((gramas_ingeridas/100)*gord_por_100g, 3)
 
-    print( listaA)
+    return  listaA
     
 
 def formula_de_hb_f(peso, altura, idade, grau_de_atividade):

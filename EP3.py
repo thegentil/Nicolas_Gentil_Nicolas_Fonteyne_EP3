@@ -29,17 +29,13 @@ Criando os dicionários
 dic_al = {}  
 dic_gramas = {}
 dic_dias = {}
+dic_consumo = {}
 
 '''
 Organizando a lista do usuário
 '''
 
 info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
-
-for p in info:        
-    print(p)
-        
-print('')
 
 lista = []
 
@@ -49,13 +45,8 @@ for l in u[3:]:
 
     b = l.strip().split(",") 
     lista.append(b)
-    
-    for pedaço in b:
-        print(pedaço)
 
 lista = sorted(lista)
-
-print('')
 
 '''
 Organizando a lista de alimentos
@@ -82,13 +73,15 @@ Criando o programa que irá relacionar os valores aos dias
 #adicionando os elementos ao dic_gramas:
 
 for e in lista:
+    
     dic_gramas[e[1]] = e[2]
+    
 for e in dic_gramas:
+    
     dic_gramas[e] = float(dic_gramas[e])
-print(dic_gramas)
-
 
 #Adicionando os elementos ao dic_dias:
+
 listavalues = []
 
 for i in range(len(lista)):
@@ -104,19 +97,62 @@ for i in range(len(lista)):
     else:
         listavalues.append(lista[i][1])
         
-print('')  
-print(dic_dias)
+#Substituindo valores de gramas em dic_al pelos valores em gramas de dic_gramas
 
-#calorias que o lok consumiu:
 for e in dic_gramas:
+    
     dic_al[e][0] = dic_gramas[e]
+
+#Calculando a ingestão de kcal, carb, prot e gord por alimento consumido e adicionando os valores obtidos em dic_consumo
     
 for e in dic_al:
     
     if e in dic_gramas:
     
-        regra_de_tres (dic_al[e][0], dic_al[e][1], dic_al[e][2], dic_al[e][3], dic_al[e][4])
+        x = regra_de_tres (dic_al[e][0], dic_al[e][1], dic_al[e][2], dic_al[e][3], dic_al[e][4])
 
+        dic_consumo[e] = x
+
+#Substituindo os valores do dic_dias pelos valores de dic_consumo:
+
+for e in dic_dias:  
+    
+    for i in range(len(dic_dias[e])):
+            
+        c = dic_dias[e][i]
+            
+        for w in dic_consumo:
+            
+            if w in dic_dias[e]:
+                
+                dic_dias[e].append(dic_consumo[w])
+                
+                dic_dias[e].remove(w)
+               
+#Somando os elementos das listas que compõem os valores das chaves do dic_dias:
+
+for e in dic_dias:
+    
+    Lkcal_consumidas = []
+    Lprot_consumidas = []
+    Lcarb_consumidos = []
+    Lgord_consumidas = []
+    
+    for w in dic_dias[e]:
+                
+       Lkcal_consumidas.append(w[0]) 
+       Lprot_consumidas.append(w[1])
+       Lcarb_consumidos.append(w[2])
+       Lgord_consumidas.append(w[3])
+    
+    Rkcal = int(sum(Lkcal_consumidas))
+    Rprot = int(sum(Lprot_consumidas))
+    Rcarb = int(sum(Lcarb_consumidos))
+    Rgord = int(sum(Lgord_consumidas))
+    
+    dic_dias[e] = [Rkcal, Rprot, Rcarb, Rgord]
+
+print(dic_dias)
 '''
 Determinando o número de calorias que o usuário deveria ingerir a cada dia
 ''' 
@@ -127,13 +163,7 @@ info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
 
-# calorias, proteínas, carbs e gord consumidas:
-
-
-
 # calorias que deveria consumir:
-
-print('')
 
 if info[3] == 'M':
     
@@ -143,6 +173,7 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
 
+print('')
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
 
 
