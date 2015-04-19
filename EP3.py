@@ -35,7 +35,9 @@ dic_consumo = {}
 Organizando a lista do usuário
 '''
 
-info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
+info = u[1].strip().split(",")    #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
+
+#Nomeando as categorias das info:
 
 for e in info:
     if e == info[0]:
@@ -43,7 +45,7 @@ for e in info:
     if e == info[1]:
         print('Idade:', info[1])
     if e == info[2]:
-        print('Peso:', info[2])
+        print('Peso:', info[2])         
     if e == info[3]:
         print('Sexo:', info[3])
     if e == info[4]:
@@ -85,7 +87,7 @@ for e in a[1:]:
 Criando o programa que irá relacionar os valores aos dias
 '''
 
-#adicionando os elementos ao dic_gramas:
+#Adicionando os elementos ao dic_gramas:
 
 for e in lista:
     
@@ -165,19 +167,15 @@ for e in dic_dias:
     Rcarb = int(sum(Lcarb_consumidos))
     Rgord = int(sum(Lgord_consumidas))
     
-    dic_dias[e] = [Rkcal, Rprot, Rcarb, Rgord]
+    dic_dias[e] = [Rkcal, Rprot, Rcarb, Rgord] 
 
-'''
-Determinando o número de calorias que o usuário deveria ingerir a cada dia
-''' 
-
-#Fazendo com que os elementos numéricos da lista info passem para o formato float
+#Fazendo com que os elementos numéricos da lista info passem para o formato float:
 
 info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
 
-#BMI
+#Calculando o BMI:
 
 BMI = formula_BMI(info[2], info[4])
 
@@ -201,7 +199,7 @@ if BMI >= 30:
     print('Você é obeso')
     print('')
 
-# calorias que deveria consumir:
+#Calorias que deveria consumir:
 
 if info[3] == 'M':
     
@@ -213,6 +211,8 @@ if info[3] == 'F':
 
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
 print('')
+
+#Calculando as colrias que ingeriu a mais/menos por dia:
     
 for e in dic_dias:
 
@@ -229,11 +229,10 @@ for e in dic_dias:
         print('Você consumiu', int(DeltaKcal), 'kacl a mais do que o recomendado')
         print('')
 
-
-
 '''
-Criando os gráficos
+CRIANDO OS GRÁFICOS
 '''
+
 dias = [1,2]
 
 resultList = [result]*len(dias)
@@ -262,9 +261,9 @@ plt.show()
 
 #Gráfico das proteínas, carboidratos e gorduras que consumiu:
 
-plt.plot(dias, protList) 
-plt.plot(dias, carbList) 
-plt.plot(dias, gordList)
+plt.plot(dias, protList) #pronteínas consumidas
+plt.plot(dias, carbList) #carboidratos consumidos
+plt.plot(dias, gordList) #gorduras consumidas
 plt.axis(1, 2, 0, 200)
 plt.ylabel('Kcal ideais/Dia')
 plt.xlabel('Dias')
