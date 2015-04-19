@@ -37,9 +37,24 @@ Organizando a lista do usuário
 
 info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
 
-lista = []
+for e in info:
+    if e == info[0]:
+        print('Nome:', info[0])
+    if e == info[1]:
+        print('Idade:', info[1])
+    if e == info[2]:
+        print('Peso:', info[2])
+    if e == info[3]:
+        print('Sexo:', info[3])
+    if e == info[4]:
+        print('Altura:', info[4])
+    if e == info[5]:
+        print('Nível de atividade física:', info[5])
+print('')
 
 #Criando uma timeline de alimentos ingeridos pelo usuário
+
+lista = []
 
 for l in u[3:]:
 
@@ -152,7 +167,6 @@ for e in dic_dias:
     
     dic_dias[e] = [Rkcal, Rprot, Rcarb, Rgord]
 
-print(dic_dias)
 '''
 Determinando o número de calorias que o usuário deveria ingerir a cada dia
 ''' 
@@ -162,6 +176,30 @@ Determinando o número de calorias que o usuário deveria ingerir a cada dia
 info [1] = float(info[1])
 info [2] = float(info[2])         
 info [4] = float(info[4])
+
+#BMI
+
+BMI = formula_BMI(info[2], info[4])
+
+if BMI < 18.5:
+    
+    print('Você é magro demais')
+    print('')
+    
+if BMI >= 18.5:    
+    if BMI < 25:        
+        print('Você é uma pessoa saudável!')
+        print('')
+        
+if BMI >= 25:
+    if BMI < 30:
+        print('Você está um pouco acima do peso')
+        print('')
+        
+if BMI >= 30:
+    
+    print('Você é obeso')
+    print('')
 
 # calorias que deveria consumir:
 
@@ -173,28 +211,62 @@ if info[3] == 'F':
     
     result = formula_de_hb_f(info[2], info[4], info[1], info[5])
 
-print('')
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
+print('')
+    
+for e in dic_dias:
+
+    DeltaKcal = (dic_dias[e][0]) - result
+    
+    print('No dia',e, ':')    
+    
+    if DeltaKcal < 0:
+        
+        print('Você consumiu', int((DeltaKcal**2)**(1/2)), 'kcal a menos do que o recomendado')
+        print('')
+    else:
+        
+        print('Você consumiu', int(DeltaKcal), 'kacl a mais do que o recomendado')
+        print('')
+
 
 
 '''
 Criando os gráficos
 '''
+dias = [1,2]
 
-dias = [0, 1, 2, 3, 4]
+resultList = [result]*len(dias)
 
-plt.plot(dias, result)
-plt.axis(0, 5, 0, 3000)
-plt.ylabel('Kcal ideais/Dia')
-plt.xlabel('Dias')
-plt.title('Calorias consumidas')
-plt.show()
+kcalList = []
+protList = []
+carbList = []
+gordList = []
 
-plt.plot(dias, result)
-plt.axis(0, 5, 0, 3000)
-plt.ylabel('Kcal ideais/Dia')
-plt.xlabel('Dias')
-plt.title('Calorias consumidas')
-plt.show()
+for e in dic_dias:
     
+    kcalList.append(dic_dias[e][0])
+    protList.append(dic_dias[e][1])
+    carbList.append(dic_dias[e][2])
+    gordList.append(dic_dias[e][3])
 
+#Gráfico das calorias consumidas e que deveria consumir:
+
+plt.plot(dias, resultList) #calorias que deveria consumir
+plt.plot(dias, kcalList, 'ro') #calorias consumidas
+plt.axis(1, 5, 0, 2000)
+plt.ylabel('Kcal ideais/Dia')
+plt.xlabel('Dias')
+plt.title('Calorias consumidas')
+plt.show()
+
+#Gráfico das proteínas, carboidratos e gorduras que consumiu:
+
+plt.plot(dias, protList) 
+plt.plot(dias, carbList) 
+plt.plot(dias, gordList)
+plt.axis(1, 2, 0, 200)
+plt.ylabel('Kcal ideais/Dia')
+plt.xlabel('Dias')
+plt.title('Calorias consumidas')
+plt.show()
