@@ -145,7 +145,7 @@ for e in dic_dias:
                 dic_dias[e].append(dic_consumo[w])
                 
                 dic_dias[e].remove(w)
-               
+
 #Somando os elementos das listas que compõem os valores das chaves do dic_dias:
 
 for e in dic_dias:
@@ -224,9 +224,15 @@ for e in dic_dias:
         
         print('Você consumiu', int((DeltaKcal**2)**(1/2)), 'kcal a menos do que o recomendado')
         print('')
-    else:
         
-        print('Você consumiu', int(DeltaKcal), 'kacl a mais do que o recomendado')
+    elif DeltaKcal == 0:
+        
+        print('Você consumiu o número exato de calorias recomendadas')
+        print('')
+    
+    else: 
+    
+        print('Você consumiu', int(DeltaKcal), 'kcal a mais do que o recomendado')
         print('')
 
 '''
@@ -264,7 +270,7 @@ plt.show()
 plt.plot(dias, protList) #pronteínas consumidas
 plt.plot(dias, carbList) #carboidratos consumidos
 plt.plot(dias, gordList) #gorduras consumidas
-plt.axis(1, 2, 0, 200)
+plt.axis(1, 5, 0, 200)
 plt.ylabel('Kcal ideais/Dia')
 plt.xlabel('Dias')
 plt.title('Calorias consumidas')
