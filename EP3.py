@@ -258,11 +258,20 @@ for e in dias:
 
 #Gráfico das calorias consumidas e que deveria consumir:
 
+<<<<<<< Updated upstream
 plt.plot(dias_plot, resultList) #calorias que deveria consumir
 plt.plot(dias_plot, kcalList, 'ro') #calorias consumidas
 plt.axis(1, 5, 0, 2000)
+=======
+names = ["6/4/15", "7/4/15"]
+
+plt.plot(dias, resultList) #calorias que deveria consumir
+plt.plot(dias, kcalList, 'ro') #calorias consumidas
+#plt.axis([0, 5, 0, 2000])
+>>>>>>> Stashed changes
 plt.ylabel('Kcal ideais/Dia')
 plt.xlabel('Dias')
+plt.xticks(list(range(len(names))), names)
 plt.title('Calorias consumidas')
 plt.show()
 
