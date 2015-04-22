@@ -238,8 +238,9 @@ for e in dic_dias:
 '''
 CRIANDO OS GRÁFICOS
 '''
+dias = sorted(dic_dias.keys())
 
-dias = [1,2]
+dias_plot = list(range(1,len(dias)+1))
 
 resultList = [result]*len(dias)
 
@@ -248,7 +249,7 @@ protList = []
 carbList = []
 gordList = []
 
-for e in dic_dias:
+for e in dias:
     
     kcalList.append(dic_dias[e][0])
     protList.append(dic_dias[e][1])
@@ -257,8 +258,8 @@ for e in dic_dias:
 
 #Gráfico das calorias consumidas e que deveria consumir:
 
-plt.plot(dias, resultList) #calorias que deveria consumir
-plt.plot(dias, kcalList, 'ro') #calorias consumidas
+plt.plot(dias_plot, resultList) #calorias que deveria consumir
+plt.plot(dias_plot, kcalList, 'ro') #calorias consumidas
 plt.axis(1, 5, 0, 2000)
 plt.ylabel('Kcal ideais/Dia')
 plt.xlabel('Dias')
@@ -267,9 +268,9 @@ plt.show()
 
 #Gráfico das proteínas, carboidratos e gorduras que consumiu:
 
-plt.plot(dias, protList) #pronteínas consumidas
-plt.plot(dias, carbList) #carboidratos consumidos
-plt.plot(dias, gordList) #gorduras consumidas
+plt.plot(dias_plot, protList) #pronteínas consumidas
+plt.plot(dias_plot, carbList) #carboidratos consumidos
+plt.plot(dias_plot, gordList) #gorduras consumidas
 plt.axis(1, 5, 0, 200)
 plt.ylabel('Kcal ideais/Dia')
 plt.xlabel('Dias')
