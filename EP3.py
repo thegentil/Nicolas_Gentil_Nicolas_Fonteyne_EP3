@@ -35,7 +35,7 @@ dic_consumo = {}
 Organizando a lista do usuário
 '''
 
-info = u[1].strip().split(",")    #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
+info = u[1].strip().split(",")          #Fazendo com que as palavras de uma linha fiquem em linhas separadas na vírgula
 
 #Nomeando as categorias das info:
 
@@ -52,6 +52,7 @@ for e in info:
         print('Altura:', info[4])
     if e == info[5]:
         print('Nível de atividade física:', info[5])
+        
 print('')
 
 #Criando uma timeline de alimentos ingeridos pelo usuário
@@ -199,7 +200,7 @@ if BMI >= 30:
     print('Você é obeso')
     print('')
 
-#Calorias que deveria consumir:
+#Calculando as Calorias que deveria consumir:
 
 if info[3] == 'M':
     
@@ -212,7 +213,7 @@ if info[3] == 'F':
 print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
 print('')
 
-#Calculando as colrias que ingeriu a mais/menos por dia:
+#Calculando as calorias que ingeriu a mais/menos por dia:
     
 for e in dic_dias:
 
@@ -238,9 +239,13 @@ for e in dic_dias:
 '''
 CRIANDO OS GRÁFICOS
 '''
-dias = sorted(dic_dias.keys())
 
+#Organizando o dicionário das datas
+
+dias = sorted(dic_dias.keys())          
 dias_plot = list(range(1,len(dias)+1))
+
+#Organizando os resultados que serão plotados nos gráficos
 
 resultList = [result]*len(dias)
 
@@ -255,33 +260,29 @@ for e in dias:
     protList.append(dic_dias[e][1])
     carbList.append(dic_dias[e][2])
     gordList.append(dic_dias[e][3])
+    
+    
+names = list(dias)          #Criando uma lista para representar os dias no eixo x(comando xticks)
 
 #Gráfico das calorias consumidas e que deveria consumir:
 
-<<<<<<< Updated upstream
-plt.plot(dias_plot, resultList) #calorias que deveria consumir
-plt.plot(dias_plot, kcalList, 'ro') #calorias consumidas
-plt.axis(1, 5, 0, 2000)
-=======
-names = ["6/4/15", "7/4/15"]
-
-plt.plot(dias, resultList) #calorias que deveria consumir
-plt.plot(dias, kcalList, 'ro') #calorias consumidas
-#plt.axis([0, 5, 0, 2000])
->>>>>>> Stashed changes
-plt.ylabel('Kcal ideais/Dia')
+plt.plot(dias_plot, resultList, label = 'Kcal ideais') #calorias que deveria consumir
+plt.plot(dias_plot, kcalList, label = 'Kcal Consumidas') #calorias consumidas
+plt.ylabel('Kcal ideais/Dia e Kcal consumidas')
 plt.xlabel('Dias')
-plt.xticks(list(range(len(names))), names)
+plt.xticks(list(range(1, len(names)+1)), names)
 plt.title('Calorias consumidas')
+plt.legend()
 plt.show()
 
 #Gráfico das proteínas, carboidratos e gorduras que consumiu:
 
-plt.plot(dias_plot, protList) #pronteínas consumidas
-plt.plot(dias_plot, carbList) #carboidratos consumidos
-plt.plot(dias_plot, gordList) #gorduras consumidas
-plt.axis(1, 5, 0, 200)
-plt.ylabel('Kcal ideais/Dia')
+plt.plot(dias_plot, protList, label = 'Proteinas') #pronteínas consumidas
+plt.plot(dias_plot, carbList, label = 'Carboidratos') #carboidratos consumidos
+plt.plot(dias_plot, gordList, label = 'Gorduras') #gorduras consumidas
+plt.ylabel('Prot, Carb, Gord /Dia')
 plt.xlabel('Dias')
-plt.title('Calorias consumidas')
+plt.xticks(list(range(1, len(names)+1)), names)
+plt.title('Proteínas, Carboidratos e Gorduras consumidos')
+plt.legend()
 plt.show()
