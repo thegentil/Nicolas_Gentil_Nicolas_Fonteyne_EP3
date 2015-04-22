@@ -214,8 +214,12 @@ print('KCALORIAS QUE DEVERIA CONSUMIR POR DIA:', int(result), 'kcal')
 print('')
 
 #Calculando as calorias que ingeriu a mais/menos por dia:
-    
-for e in dic_dias:
+ 
+#Organizando o dicionário das datas
+
+dias = sorted(dic_dias.keys())          
+   
+for e in dias:
 
     DeltaKcal = (dic_dias[e][0]) - result
     
@@ -240,12 +244,9 @@ for e in dic_dias:
 CRIANDO OS GRÁFICOS
 '''
 
-#Organizando o dicionário das datas
-
-dias = sorted(dic_dias.keys())          
-dias_plot = list(range(1,len(dias)+1))
-
 #Organizando os resultados que serão plotados nos gráficos
+
+dias_plot = list(range(1,len(dias)+1))
 
 resultList = [result]*len(dias)
 
